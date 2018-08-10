@@ -17,7 +17,7 @@
 
 namespace Microsoft.WindowsAzure.Storage.Core.Util
 {
-    internal partial class AsyncSemaphore
+    public partial class AsyncSemaphore
     {
         private int count;
 

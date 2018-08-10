@@ -27,7 +27,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
     using System.Threading;
     using System.Threading.Tasks;
 
-    internal sealed class BlobWriteStream : BlobWriteStreamBase
+    public sealed class BlobWriteStream : BlobWriteStreamBase
     {
         /// <summary>
         /// Initializes a new instance of the BlobWriteStream class for a block blob.
@@ -189,7 +189,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
             }
 
             await this.DispatchWriteAsync().ConfigureAwait(false);
-            await Task.Run(() => this.noPendingWritesEvent.Wait(), cancellationToken);
+            await this.noPendingWritesEvent.WaitAsync(cancellationToken);
 
             if (this.lastException != null)
             {

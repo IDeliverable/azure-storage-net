@@ -225,12 +225,6 @@ namespace Microsoft.WindowsAzure.Storage.File
                     this.internalBuffer.Dispose();
                     this.internalBuffer = null;
                 }
-
-                if (this.noPendingWritesEvent != null)
-                {
-                    this.noPendingWritesEvent.Dispose();
-                    this.noPendingWritesEvent = null;
-                }
             }
 
             base.Dispose(disposing);

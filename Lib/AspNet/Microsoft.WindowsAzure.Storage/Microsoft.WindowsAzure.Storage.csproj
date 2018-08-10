@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Azure Storage SDK for NetCore</Description>
+    <VersionPrefix>9.3.1.0</VersionPrefix>
+    <Authors>Microsoft Corporation</Authors>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DelaySign>true</DelaySign>
+    <AssemblyName>Microsoft.WindowsAzure.Storage2</AssemblyName>
+    <AssemblyOriginatorKeyFile>MSSharedLibKey.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>false</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>Microsoft.WindowsAzure.Storage</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Common\*.cs;..\..\Common\Shared\**\*.cs;..\..\Common\Auth\**\*.cs;..\..\Common\Core\**\*.cs;..\..\Common\RetryPolicies\**\*.cs;..\..\Common\Blob\**\*.cs;..\..\Common\File\**\*.cs;..\..\Common\Queue\**\*.cs;..\..\Common\Table\*.cs;..\..\Common\Table\Protocol\*.cs;..\..\WindowsRuntime\*.cs;..\..\WindowsRuntime\Auth\**\*.cs;..\..\WindowsRuntime\Blob\Protocol\*.cs;..\..\WindowsRuntime\Blob\*.cs;..\..\WindowsRuntime\Core\**\*.cs;..\..\WindowsRuntime\Shared\**\*.cs;..\..\WindowsRuntime\Queue\*.cs;..\..\WindowsRuntime\Queue\Protocol\*.cs;..\..\WindowsRuntime\File\*.cs;..\..\WindowsRuntime\File\Protocol\*.cs;..\..\WindowsRuntime\Table\*.cs;..\..\WindowsRuntime\Table\DataServices\*.cs;..\..\WindowsRuntime\Table\Protocol\*.cs" Exclude="bin\**;obj\**;**\*.xproj;packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Nito.AsyncEx.Coordination" Version="5.0.0-pre-05" />
+  </ItemGroup>
+
+</Project>

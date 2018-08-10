@@ -28,7 +28,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob
     using System.Text;
 
     [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:FieldsMustBePrivate", Justification = "Reviewed.")]
-    internal abstract class BlobWriteStreamBase :
+    public abstract class BlobWriteStreamBase :
         CloudBlobStream
     {
         protected CloudBlockBlob blockBlob;
@@ -309,12 +309,6 @@ namespace Microsoft.WindowsAzure.Storage.Blob
                 {
                     this.internalBuffer.Dispose();
                     this.internalBuffer = null;
-                }
-       
-                if (this.noPendingWritesEvent != null)
-                {
-                    this.noPendingWritesEvent.Dispose();
-                    this.noPendingWritesEvent = null;
                 }
             }
 

@@ -25,7 +25,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
     /// This class provides asynchronous semaphore functionality (based on Stephen Toub's blog).
     /// </summary>
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed - Stephen Toub is a proper noun.")]
-    internal partial class AsyncSemaphore
+    public partial class AsyncSemaphore
     {
         private readonly static Task<bool> CompletedTask = Task.FromResult(true);
 

@@ -161,7 +161,7 @@ namespace Microsoft.WindowsAzure.Storage.File
             }
 
             await this.DispatchWriteAsync().ConfigureAwait(false);
-            await Task.Run(() => this.noPendingWritesEvent.Wait(), cancellationToken);
+            await this.noPendingWritesEvent.WaitAsync(cancellationToken);
 
             if (this.lastException != null)
             {

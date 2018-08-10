@@ -19,10 +19,12 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
 {
     using System;
     using System.Threading;
+	using System.Threading.Tasks;
+	using Nito.AsyncEx;
 
-    internal sealed class CounterEvent : IDisposable
+	public sealed class CounterEvent
     {
-        private ManualResetEvent internalEvent = new ManualResetEvent(true);
+        private AsyncManualResetEvent internalEvent = new AsyncManualResetEvent(true);
         private object counterLock = new object();
         private int counter = 0;
 
@@ -30,13 +32,13 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
         /// Gets a WaitHandle that is used to wait for the event to be set.
         /// </summary>
         /// <value>A WaitHandle that is used to wait for the event to be set.</value>
-        public WaitHandle WaitHandle
-        {
-            get
-            {
-                return this.internalEvent;
-            }
-        }
+        //public WaitHandle WaitHandle
+        //{
+        //    get
+        //    {
+        //        return this.internalEvent;
+        //    }
+        //}
 
         /// <summary>
         /// Increments the counter by one and thus sets the state of the event to non-signaled, causing threads to block.
@@ -67,9 +69,9 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
         /// <summary>
         /// Blocks the current thread until the CounterEvent is set.
         /// </summary>
-        public void Wait()
+        public Task WaitAsync(CancellationToken cancellationToken)
         {
-            this.internalEvent.WaitOne();
+			return this.internalEvent.WaitAsync(cancellationToken);
         }
 
         /// <summary>
@@ -77,21 +79,9 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
         /// </summary>
         /// <param name="millisecondsTimeout">The number of milliseconds to wait, or Infinite(-1) to wait indefinitely.</param>
         /// <returns>true if the CounterEvent was set; otherwise, false.</returns>
-        public bool Wait(int millisecondsTimeout)
-        {
-            return this.internalEvent.WaitOne(millisecondsTimeout);
-        }
-
-        /// <summary>
-        /// Releases all resources used by the current instance of the CounterEvent class.
-        /// </summary>
-        public void Dispose()
-        {
-            if (this.internalEvent != null)
-            {
-                this.internalEvent.Dispose();
-                this.internalEvent = null;
-            }
-        }
+        //public bool Wait(int millisecondsTimeout)
+        //{
+        //    return this.internalEvent.WaitOne(millisecondsTimeout);
+        //}
     }
 }

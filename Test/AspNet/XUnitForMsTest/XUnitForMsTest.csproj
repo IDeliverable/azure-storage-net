@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.0.0</VersionPrefix>
+    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <DefineConstants>$(DefineConstants);XUNIT</DefineConstants>
+    <DelaySign>true</DelaySign>
+    <AssemblyName>XUnitForMsTest</AssemblyName>
+    <AssemblyOriginatorKeyFile>MSSharedLibKey.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <PackageId>XUnitForMsTest</PackageId>
+    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
+    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.2.0-beta5-build3474" />
+  </ItemGroup>
+
+</Project>

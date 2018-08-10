@@ -32,7 +32,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Util
     /// <summary>
     /// Wrapper class for MD5.
     /// </summary>
-    internal class MD5Wrapper : IDisposable
+    public class MD5Wrapper : IDisposable
     {
         [SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1401:FieldsMustBePrivate", Justification = "Reviewed.")]
         private readonly bool version1MD5 = CloudStorageAccount.UseV1MD5;
