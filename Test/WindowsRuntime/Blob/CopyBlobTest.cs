@@ -184,17 +184,17 @@ namespace Microsoft.WindowsAzure.Storage.Blob
             await CloudBlockBlobCopyImpl(async (source, copy) => await copy.StartCopyAsync(TestHelper.Defiddler(source)));         
         }
 
-        [TestMethod]
-        [Description("Copy a blob using x-ms-requires-sync, and then verify its contents, properties, and metadata")]
-        [TestCategory(ComponentCategory.Blob)]
-        [TestCategory(TestTypeCategory.UnitTest)]
-        [TestCategory(SmokeTestCategory.NonSmoke)]
-        [TestCategory(TenantTypeCategory.DevStore), TestCategory(TenantTypeCategory.DevFabric), TestCategory(TenantTypeCategory.Cloud)]
-        [Ignore]
-        public async Task CloudBlockBlobCopyWithRequiresSyncTestAsync()
-        {
-            //await CloudBlockBlobCopyImpl(async (source, copy) => await copy.StartCopyAsync(TestHelper.Defiddler(source), true /* syncCopy */, default(AccessCondition), default(AccessCondition), default(BlobRequestOptions), default(OperationContext), default(CancellationToken)));
-        }
+        //[TestMethod]
+        //[Description("Copy a blob using x-ms-requires-sync, and then verify its contents, properties, and metadata")]
+        //[TestCategory(ComponentCategory.Blob)]
+        //[TestCategory(TestTypeCategory.UnitTest)]
+        //[TestCategory(SmokeTestCategory.NonSmoke)]
+        //[TestCategory(TenantTypeCategory.DevStore), TestCategory(TenantTypeCategory.DevFabric), TestCategory(TenantTypeCategory.Cloud)]
+        //[Ignore]
+        //public async Task CloudBlockBlobCopyWithRequiresSyncTestAsync()
+        //{
+        //    //await CloudBlockBlobCopyImpl(async (source, copy) => await copy.StartCopyAsync(TestHelper.Defiddler(source), true /* syncCopy */, default(AccessCondition), default(AccessCondition), default(BlobRequestOptions), default(OperationContext), default(CancellationToken)));
+        //}
 
         private static async Task CloudBlockBlobCopyFromCloudFileImpl(Func<CloudFile, CloudBlockBlob, string> copyFunc)
         {
