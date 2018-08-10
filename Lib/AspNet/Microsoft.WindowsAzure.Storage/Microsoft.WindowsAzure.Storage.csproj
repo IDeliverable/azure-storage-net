@@ -1,17 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Azure Storage SDK for NetCore</Description>
-    <VersionPrefix>9.3.1.0</VersionPrefix>
+    <Description>Fork of the official Azure Storage SDK for .NET with several scalability improvements.</Description>
+    <VersionPrefix>1.0.1-preview1</VersionPrefix>
     <Authors>IDeliverable, Ltd.</Authors>
     <TargetFramework>netstandard1.3</TargetFramework>
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DelaySign>true</DelaySign>
     <AssemblyName>IDeliverable.WindowsAzure.Storage</AssemblyName>
-    <AssemblyOriginatorKeyFile>MSSharedLibKey.snk</AssemblyOriginatorKeyFile>
-    <SignAssembly>false</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <PackageId>IDeliverable.WindowsAzure.Storage</PackageId>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
     <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
