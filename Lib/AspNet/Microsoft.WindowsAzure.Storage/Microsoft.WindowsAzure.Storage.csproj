@@ -8,7 +8,7 @@
     <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DelaySign>true</DelaySign>
-    <AssemblyName>Microsoft.WindowsAzure.Storage2</AssemblyName>
+    <AssemblyName>IDeliverable.WindowsAzure.Storage</AssemblyName>
     <AssemblyOriginatorKeyFile>MSSharedLibKey.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>false</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
